@@ -4,14 +4,13 @@
         MEU PRIMEIRO BLOG COM DJANGO!
     </head>
     <body>
-        <h1>Primeiros comandos</h1>
-        <div><p>Hi there! </p>
-        <p>It works, uhuuul!</p></div>
-        <h2>Testando coisas</h2>
-        <div><p> Estou gostando da experiência de criar um blog pelo django, é bem diferente e divertido.</p>
-        <em> Estou testando outras tags para entender como montar meu template de uma forma legal e que eu goste</em> <!-- Deixa o texto em italico-->
-        <p><strong> Acho que esse é em negrito</strong></p></div> <!---->
-        
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 
 
 
